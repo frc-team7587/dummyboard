@@ -1,5 +1,33 @@
 package frc.robot.subsystems;
 
-public class cim {
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+
+import static frc.robot.Constants.*;
+
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
+public class cim extends SubsystemBase{
     
+    private VictorSPX Cmotor = new VictorSPX(CIM_ID);
+
+    public cim() {
+        this.Cmotor.configFactoryDefault();
+    }
+
+    public void raise (){
+
+    Cmotor.set(ControlMode.PercentOutput, CIM_SPEED); //up
+    }
+
+    public void lower() {
+
+        Cmotor.set(ControlMode.PercentOutput, -CIM_SPEED); //down
+    }
+
+    public  void stop() {
+        Cmotor.set(ControlMode.PercentOutput, 0); //stop
+    }
+
+    @Override public void periodic() {}
 }

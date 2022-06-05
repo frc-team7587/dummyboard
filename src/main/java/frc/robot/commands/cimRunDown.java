@@ -1,26 +1,25 @@
 package frc.robot.commands;
+import edu.wpi.first.wpilibj2.command.*;
+import frc.robot.subsystems.*;
+
 
 public class cimRunDown extends CommandBase {
-    private Arm m_arm;
-    private int count;
+    private cim Cmotor;
 
-    public cimRunDown(Arm subsystem) {
-
+    public cimRunDown(cim subsystem) {
         addRequirements(subsystem);
-        m_arm = subsystem;
-    }
-
-
-    @Override
-    public void initialize() {
-        count=0;
+        Cmotor = subsystem;
     }
 
     @Override
     public void execute() {
-        if( (count)%20==0){
-            System.out.println("arm Down [" + ++count + "]");
-        }
-        m_arm.lower();
+        Cmotor.lower();
+
     }
+    
+    @Override
+    public void end(boolean interrupted) {
+        Cmotor.stop();
+    }
+    
 }
