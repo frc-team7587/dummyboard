@@ -5,6 +5,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -23,6 +24,15 @@ public class RobotContainer {
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
+
+  XboxController driverController = new XboxController(Robot.DRIVER_CONTROLLER);
+
+
+  private Joystick driverController = new Joystick(Robot.DRIVER_CONTROLLER);
+
+  public double GetDriverRawAxis(int axis){
+    return driverController.getRawAxis(axis);
+  }
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
