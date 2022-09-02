@@ -1,6 +1,24 @@
 package frc.robot.commands;
 
-public class neoRunUp
- {
-    
+import edu.wpi.first.wpilibj2.command.*;
+import frc.robot.subsystems.*;
+
+public class neoRunUp {
+    private neo neoMotor;
+
+    public neoRunUp(neo subsystem) {
+        addRequirements(subsystem);
+        neoMotor = subsystem;
+    }
+
+    @Override
+    public void execute() {
+        neo.raise();
+    }
+
+    @Override
+    public void end(boolean interrupted) {
+        neo.stop();
+    }
+
 }

@@ -22,6 +22,10 @@ public class neo extends SubsystemBase {
         neo.set(-NEO_SPEED);
     }
 
+    public void stop() {
+        neo.set(0);
+    }
+
     @Override
     public void periodic() {
 

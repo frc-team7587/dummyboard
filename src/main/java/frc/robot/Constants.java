@@ -22,7 +22,10 @@ public final class Constants {
     public static final int FALCON_ID = 0;
     public static final double FALCON_SPEED = 0;
 
-    // Variables for Falcon motor
+    // Variables for Neo motor
     public static final int NEO_ID = 0;
     public static final double NEO_SPEED = 0;
+
+    // Controller
+    public static final int XBOX_CTRL_PORT = 0;
 }
