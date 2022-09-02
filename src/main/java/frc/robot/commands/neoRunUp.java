@@ -3,7 +3,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.*;
 import frc.robot.subsystems.*;
 
-public class neoRunUp {
+public class neoRunUp extends CommandBase{
     private neo neoMotor;
 
     public neoRunUp(neo subsystem) {
@@ -13,12 +13,12 @@ public class neoRunUp {
 
     @Override
     public void execute() {
-        neo.raise();
+        neoMotor.raise();
     }
 
     @Override
     public void end(boolean interrupted) {
-        neo.stop();
+        neoMotor.stop();
     }
 
 }
